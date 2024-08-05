@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  content: ["./public/**/*.{html,js}", "./node_modules/flowbite/**/*.js"],
   theme: {
     extend: {
       colors: {
@@ -20,6 +20,7 @@ module.exports = {
         'purple-bg': 'linear-gradient(90deg, #86198F  0%, #D946EF 100%)',
         'card-bg': 'linear-gradient(114deg, #171717 2.89%, #1D4ED8 100.82%)',
         'card-bg2': 'linear-gradient(90deg, #3730A3 0%, #6366F1 100%)',
+        'card-bg3': 'linear-gradient(90deg, #262626 0%, #525252 100%)',
       },
       dropShadow: {
         '3xl': '0px 0px 5px rgba(0, 0, 0, 0.15)',
@@ -54,5 +55,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
