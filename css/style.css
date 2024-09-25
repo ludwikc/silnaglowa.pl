@@ -2808,3 +2808,52 @@ p.wyzwanie {
   text-decoration: solid underline yellow 3px;
   
 }
+
+
+
+
+
+/**** glowing button ****/
+.glow-effect {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(
+    45deg,
+    #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.7; /* Adjust this value to control the intensity of the glow */
+  animation: glowing 20s linear infinite;
+  border-radius: inherit;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Optional: Increase glow intensity on hover */
+.glow-effect:hover::before {
+  opacity: 1;
+  filter: blur(15px);
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .glow-effect::before {
+    animation: none;
+    background-position: 0 0;
+  }
+}
