@@ -2817,6 +2817,8 @@ p.wyzwanie {
 .glow-effect {
   position: relative;
   z-index: 1;
+  transform: scale(2);
+  transform-origin: left; margin-bottom: 100px;margin-top: 100px;
 }
 
 .glow-effect::before {
@@ -2832,9 +2834,9 @@ p.wyzwanie {
   );
   background-size: 400% 400%;
   z-index: -1;
-  filter: blur(10px);
+  filter: blur(20px);
   opacity: 0.7; /* Adjust this value to control the intensity of the glow */
-  animation: glowing 20s linear infinite;
+  animation: glowing 100s linear infinite;
   border-radius: inherit;
 }
 
@@ -2857,3 +2859,4 @@ p.wyzwanie {
     background-position: 0 0;
   }
 }
+
